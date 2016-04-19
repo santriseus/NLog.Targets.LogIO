@@ -63,7 +63,7 @@
   </Target>
   -->
   <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
-    <Exec Command="$(SolutionDir)packages\NuGet.CommandLine.3.3.0\tools\nuget.exe pack NLog.Targets.LogIO.csproj">
+    <Exec Command="$(SolutionDir)Tools\nuget.exe pack NLog.Targets.LogIO.csproj">
     </Exec>
   </Target>
 </Project>
