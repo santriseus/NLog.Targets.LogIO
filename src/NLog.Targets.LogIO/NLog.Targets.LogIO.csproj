@@ -57,10 +57,7 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
+  <Target Name="AfterBuild">
+  </Target>
   -->
-  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
-
-    <Exec Command="nuget pack NLog.Targets.LogIO.csproj -Prop Configuration=Release"></Exec>
-
-</Target>
 </Project>
