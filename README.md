@@ -2,12 +2,6 @@ Sends log messages to the [log.io](http://logio.org/).
 
 ##Configuration Syntax
 ```xml
-
-<nlog> 
-  <extensions> 
-    <add assembly="NLog.Targets.LogIO"/> 
-  </extensions> 
-  <targets>
     <target xsi:type="LogIO"
             name="String"
             domain="String" 
@@ -19,10 +13,25 @@ Sends log messages to the [log.io](http://logio.org/).
             maxMessageSize="Integer"
             maxQueueSize="Integer"
     />
+```
+
+##Config Example
+```xml
+
+<nlog> 
+  <extensions> 
+    <add assembly="NLog.Targets.LogIO"/> 
+  </extensions> 
+    <targets async ="true">
+      <target xsi:type="logio" node ="${machinename}" stream="${logger}"/>
     </targets>
-</nlog>
+    <rules>
+      <logger name="*" minlevel="Info" writeTo="logio"/>
+    </rules>
+  </nlog>
 
 ```
+
 
 ## Install log.io Server on Windows
 
