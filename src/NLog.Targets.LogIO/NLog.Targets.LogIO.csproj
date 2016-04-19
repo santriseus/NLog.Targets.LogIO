@@ -49,15 +49,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NLog.Targets.ILogIO.nuspec" />
-    <None Include="packages.config" />
+    <None Include="NLog.Targets.ILogIO.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
+    <Exec Command="$(SolutionDir)packages\NuGet.CommandLine.3.3.0\tools\nuget.exe pack NLog.Targets.LogIO.csproj">
+    </Exec>
+  </Target>
 </Project>

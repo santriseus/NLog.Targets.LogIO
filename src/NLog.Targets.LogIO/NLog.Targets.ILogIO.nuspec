@@ -3,7 +3,7 @@
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
-    <authors>$author$</authors>
+    <authors>santriseus</authors>
     <summary>NLog target for log.io http://logio.org/ </summary>
     <description>An NLog target that utilize the standart Network target with tcp connection and allows to write to log.io http://logio.org/.</description>
     <language>en-US</language>
