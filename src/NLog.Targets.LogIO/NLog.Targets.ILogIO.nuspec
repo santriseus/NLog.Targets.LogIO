@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <summary>NLog target for log.io http://logio.org/ </summary>
+    <description>An NLog target that utilize the standart Network target with tcp connection and allows to write to log.io http://logio.org/.</description>
+    <language>en-US</language>
+    <tags>NLog logging target log log.io logio</tags>
+    <projectUrl>https://github.com/santriseus/NLog.Targets.LogIO</projectUrl>
+    <licenseUrl>https://github.com/santriseus/NLog.Targets.LogIO/blob/master/LICENSE</licenseUrl>
+    <releaseNotes>
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\$id$.dll" target="lib\net45" />
+  </files>
+</package>
