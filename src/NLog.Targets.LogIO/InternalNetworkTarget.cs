@@ -11,8 +11,6 @@ namespace NLog.Targets.LogIO
 {
     internal sealed class InternalNetworkTarget : NetworkTarget
     {
-        private string _node = null;
-
         public Layout Node { get; set; }
 
         public Layout Stream { get; set; }
