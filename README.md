@@ -23,7 +23,7 @@ Sends log messages to the [log.io](http://logio.org/).
     <add assembly="NLog.Targets.LogIO"/> 
   </extensions> 
     <targets async ="true">
-      <target xsi:type="logio" node ="${machinename}" stream="${logger}"/>
+      <target xsi:type="LogIO" name="logio" node ="${machinename}" stream="${logger}"/>
     </targets>
     <rules>
       <logger name="*" minlevel="Info" writeTo="logio"/>
