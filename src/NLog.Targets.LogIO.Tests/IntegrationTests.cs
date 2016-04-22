@@ -36,6 +36,30 @@ namespace NLog.Targets.LogIO.Tests
         }
 
         [Test]
+        public void SanizeNewLines()
+        {
+            var logioTarget = new LogIOTarget();
+            logioTarget.Node = "${machinename}";
+            logioTarget.Stream = "${logger}";
+            logioTarget.Layout = "Logger: ${logger}  TID: ${threadid} Message: ${message}";
+
+            var rule = new LoggingRule("*", logioTarget);
+            rule.EnableLoggingForLevels(LogLevel.Trace, LogLevel.Fatal);
+
+            var config = new LoggingConfiguration();
+            config.LoggingRules.Add(rule);
+
+            LogManager.Configuration = config;
+
+            var logger = LogManager.GetLogger("Example");
+
+            logger.Info("Hello\r\nlog.io\r\nwith\r\nnewline!");
+
+            LogManager.Flush();
+        }
+
+
+        [Test]
         public void ExceptionTest()
         {
             var logioTarget = new LogIOTarget();

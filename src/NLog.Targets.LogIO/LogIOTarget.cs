@@ -95,7 +95,7 @@ namespace NLog.Targets.LogIO
             _networkTarget.Stream = Stream;
             _networkTarget.MaxQueueSize = MaxQueueSize;
             _networkTarget.OnOverflow = OnOverflow;
-            _networkTarget.Layout = Layout;
+            _networkTarget.Layout = new SanitizedLayout(Layout);
             base.InitializeTarget();
         }
 
