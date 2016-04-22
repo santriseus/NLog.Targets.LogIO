@@ -18,6 +18,7 @@ namespace NLog.Targets.LogIO
         {
             var builder = new StringBuilder(_layout.Render(logEvent));
             builder.Replace(Environment.NewLine, " ");
+            builder.Replace("\r\n", " ");
             return builder.ToString();
         }
     }
